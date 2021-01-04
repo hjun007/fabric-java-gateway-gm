@@ -36,27 +36,3 @@ peers:
     grpcOptions:
       ssl-target-name-override: peer0.org2.example.com:9051
       hostnameOverride: peer0.org2.example.com:9051
-#certificateAuthorities:
-#  ca.org1.example.com:
-#    url: http://192.168.1.139:7054
-#    caName: ca-org1
-#    tlsCACerts:
-#      pem: |
-#        -----BEGIN CERTIFICATE-----
-#        MIICUjCCAfigAwIBAgIRAIrTz5XyE4+5O8v5n60o60gwCgYIKoEcz1UBg3UwczEL
-#        MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
-#        cmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh
-#        Lm9yZzEuZXhhbXBsZS5jb20wHhcNMjAxMDA4MDg1MTAwWhcNMzAxMDA2MDg1MTAw
-#        WjBzMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN
-#        U2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UE
-#        AxMTY2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqBHM9VAYItA0IA
-#        BLjVjqUCQEPciF2hvUpVMjouDygKDiq4m4FvLfkle1qdeY+YfY64bEak40AQUeMO
-#        6exusc/UdSEISy3bN4Ff25yjbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAU
-#        BggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQg
-#        t2KOXAOeFx20nA6RlRFX6M2zGksfticEwubz1zqoWxwwCgYIKoEcz1UBg3UDSAAw
-#        RQIhAOHyqxZ+78J7w2zUxgWXhDnk/1DSx7WBJ6Zab9khewOZAiBn0y4a7ZgNH1Os
-#        E5fF95p7RrAgA3R4uXeqEmP3B32PjQ==
-#        -----END CERTIFICATE-----
-#
-#    httpOptions:
-#      verify: false

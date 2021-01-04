@@ -1,7 +1,5 @@
-/*
-SPDX-License-Identifier: Apache-2.0
-*/
-
+## How to use
+```java
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.hyperledger.fabric.gateway.*;
 import java.nio.file.Path;
@@ -38,7 +36,6 @@ public class ClientApp {
 			Contract contract = network.getContract("mycc");
 
 			byte[] s = contract.evaluateTransaction("Query", "a");
-
 			System.out.println(new String(s));
 
 			contract.submitTransaction("Invoke", "a", "b", "1");
@@ -49,3 +46,4 @@ public class ClientApp {
 		}
 	}
 }
+```
