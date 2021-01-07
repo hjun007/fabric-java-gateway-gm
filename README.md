@@ -10,20 +10,19 @@ public class ClientApp {
 
 	static {
 		System.setProperty("org.hyperledger.fabric.sdk.service_discovery.as_localhost", "false");
+		System.setProperty("org.hyperledger.fabric.sdk.configuration", Paths.get("config", "config.properties").toAbsolutePath().toString());
+		Security.addProvider(new BouncyCastleProvider());
+		Security.removeProvider("SunEC");
 	}
 
 	public static void main(String[] args) throws Exception {
 
-		Security.addProvider(new BouncyCastleProvider());
-		Security.removeProvider("SunEC");
-		Path walletPath = Paths.get("resources", "wallet");
-		System.out.println(walletPath.toAbsolutePath().toString());
+		// Load a file system based wallet for managing identities.
+		Path walletPath = Paths.get("resources", "whu-cloud", "wallet");
 		Wallet wallet = Wallets.newFileSystemWallet(walletPath);
-		System.out.println(wallet.list());
+
 		// load a CCP
-		Path networkConfigPath = Paths.get("resources","connection-org1.yaml");
-		System.setProperty("org.hyperledger.fabric.sdk.configuration",
-				Paths.get("config", "config.properties").toAbsolutePath().toString());
+		Path networkConfigPath = Paths.get("resources", "whu-cloud", "connection-org1.yaml");
 
 		Gateway.Builder builder = Gateway.createBuilder();
 		builder.identity(wallet, "admin").networkConfig(networkConfigPath).discovery(true);
@@ -35,13 +34,15 @@ public class ClientApp {
 			Network network = gateway.getNetwork("mychannel");
 			Contract contract = network.getContract("mycc");
 
-			byte[] s = contract.evaluateTransaction("Query", "a");
-			System.out.println(new String(s));
+			byte[] result;
+
+			result = contract.evaluateTransaction("Query", "a");
+			System.out.println(new String(result));
 
 			contract.submitTransaction("Invoke", "a", "b", "1");
 
-			s = contract.evaluateTransaction("Query", "a");
-			System.out.println(new String(s));
+			result = contract.evaluateTransaction("Query", "a");
+			System.out.println(new String(result));
 
 		}
 	}
