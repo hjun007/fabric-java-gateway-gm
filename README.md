@@ -1,3 +1,8 @@
+## About
+- **v1.4.6** was tested based on https://github.com/hjun007/fabric-gm-1.4.6.git
+- **v2.0.0** was tested based on https://github.com/hjun007/fabric-gm-2.0.0.git
+- **feature-ukey** was tested based on https://github.com/hjun007/fabric-gm-2.0.0-dsvs.git
+
 ## How to use
 ```java
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
