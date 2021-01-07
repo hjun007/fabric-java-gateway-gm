@@ -1,0 +1,40 @@
+---
+name: first-network-org2
+version: 1.0.0
+client:
+  organization: Org2
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  Org2:
+    mspid: Org2MSP
+    peers:
+    - peer0.org2.example.com
+
+peers:
+  peer0.org2.example.com:
+    url: grpc://peer0.org2.example.com:9051
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICVzCCAf6gAwIBAgIRAK1ZlEoF5AF8Zm+2SXNIfC0wCgYIKoEcz1UBg3UwdjEL
+        MAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG
+        cmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHzAdBgNVBAMTFnRs
+        c2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMjAxMDA4MDg1MTAwWhcNMzAxMDA2MDg1
+        MTAwWjB2MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UE
+        BxMNU2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEfMB0G
+        A1UEAxMWdGxzY2Eub3JnMS5leGFtcGxlLmNvbTBZMBMGByqGSM49AgEGCCqBHM9V
+        AYItA0IABM2zxkYKY+kg/TMwUO9YqbzfxlVR0HoywInyixT3eYUFEXNvVK0hmwrg
+        iTUOgrYhY/3R+ZQjYkj+19ICJMginoejbTBrMA4GA1UdDwEB/wQEAwIBpjAdBgNV
+        HSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEwDwYDVR0TAQH/BAUwAwEB/zApBgNV
+        HQ4EIgQgjktsjjVnQsICoEsrnmFDc7BWgfLUKLFyqCSFCSAOTmUwCgYIKoEcz1UB
+        g3UDRwAwRAIgeVrbNQKQQrAfziaxefUF3//Arl5GzfBsGgkZYVa/aPUCIGw1XZMC
+        +2l0iy4qKySb29imD0Gd9js25OvUfczWJhkN
+        -----END CERTIFICATE-----
+        
+    grpcOptions:
+      ssl-target-name-override: peer0.org2.example.com:9051
+      hostnameOverride: peer0.org2.example.com:9051
+
